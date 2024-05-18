@@ -17,13 +17,33 @@ class ProjectCard extends StatelessWidget {
           children: [
             Text(
               project.name,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            const SizedBox(height: 36),
+            Text(
+              "Screenshots:",
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             const SizedBox(height: 24),
-            const Text("Screenshots:"),
-            const SizedBox(height: 12),
             ImageRow(
               images: project.imageResourcePaths,
             ),
+            const SizedBox(height: 24),
+            Text(
+              "Description: ${project.description}",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            const SizedBox(height: 24),
+            Text(
+              "Compatible Platforms: ${project.platforms.map((e) => e.name).join(", ")}",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            const SizedBox(height: 24),
+            Text(
+              "Tech-Stack: ${project.techStack.map((e) => e.name).join(", ")}",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            const SizedBox(height: 12),
           ],
         ),
       ),

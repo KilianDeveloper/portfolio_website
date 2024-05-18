@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ImageRow extends StatelessWidget {
+class ImageRow extends StatefulWidget {
   final List<String> images;
   const ImageRow({
     super.key,
@@ -8,17 +8,39 @@ class ImageRow extends StatelessWidget {
   });
 
   @override
+  State<ImageRow> createState() => _ImageRowState();
+}
+
+class _ImageRowState extends State<ImageRow> {
+  final ScrollController _controller = ScrollController();
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 600,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: images.length,
-        itemBuilder: (context, index) => ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image.asset(images[index]),
+      child: RawScrollbar(
+        scrollbarOrientation: ScrollbarOrientation.bottom,
+        controller: _controller,
+        thumbColor: Theme.of(context).colorScheme.secondary,
+        trackColor: Theme.of(context).colorScheme.surfaceVariant,
+        trackVisibility: true,
+        trackRadius: const Radius.circular(20),
+        radius: const Radius.circular(20),
+        thickness: 8,
+        thumbVisibility: true,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 32),
+          child: ListView.separated(
+            controller: _controller,
+            scrollDirection: Axis.horizontal,
+            itemCount: widget.images.length,
+            itemBuilder: (context, index) => ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(widget.images[index]),
+            ),
+            separatorBuilder: (context, index) => const SizedBox(width: 16),
+          ),
         ),
-        separatorBuilder: (context, index) => const SizedBox(width: 16),
       ),
     );
   }

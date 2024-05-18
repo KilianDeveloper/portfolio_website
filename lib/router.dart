@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_test/about/about.dart';
-import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/background.dart';
 import 'package:flutter_web_test/home/home.dart';
-import 'package:flutter_web_test/main.dart';
 import 'package:flutter_web_test/projects/projects.dart';
-import 'package:flutter_web_test/theme.dart';
 import 'package:go_router/go_router.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -34,7 +31,6 @@ final GoRouter appRouter = GoRouter(
           children: [
             Scaffold(
               extendBodyBehindAppBar: true,
-              appBar: const PortfolioAppBar(),
               body: Stack(
                 children: [
                   SizedBox(
@@ -44,15 +40,7 @@ final GoRouter appRouter = GoRouter(
                       painter: PageBackgroundPainter(),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 160,
-                      right: paddingLeft,
-                      left: paddingLeft,
-                      bottom: 60,
-                    ),
-                    child: child,
-                  ),
+                  child,
                 ],
               ),
             ),
@@ -84,7 +72,7 @@ final GoRouter appRouter = GoRouter(
           pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
             context: context,
             state: state,
-            child: ProjectsScreen(),
+            child: const ProjectsScreen(),
           ),
         ),
       ],

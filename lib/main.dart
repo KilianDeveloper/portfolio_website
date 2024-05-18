@@ -9,8 +9,6 @@ void main() {
   runApp(const PortfolioApp());
 }
 
-const paddingLeft = 100.0;
-
 class PortfolioApp extends StatelessWidget {
   const PortfolioApp({super.key});
 
@@ -19,6 +17,7 @@ class PortfolioApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Portfolio',
       theme: appTheme,
+      scrollBehavior: HorizontalScrollBehavior(),
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
     );

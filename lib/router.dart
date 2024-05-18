@@ -4,6 +4,8 @@ import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/background.dart';
 import 'package:flutter_web_test/home/home.dart';
 import 'package:flutter_web_test/main.dart';
+import 'package:flutter_web_test/projects/projects.dart';
+import 'package:flutter_web_test/theme.dart';
 import 'package:go_router/go_router.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -82,7 +84,7 @@ final GoRouter appRouter = GoRouter(
           pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
             context: context,
             state: state,
-            child: Text("sadadadggfdddf"),
+            child: ProjectsScreen(),
           ),
         ),
       ],

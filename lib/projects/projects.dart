@@ -32,7 +32,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                     style: Theme.of(context).textTheme.titleLarge,
                     duration: const Duration(milliseconds: 500),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 80),
                   ...projects.map((project) => ProjectCard(project))
                 ],
               ),

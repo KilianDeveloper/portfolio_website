@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_test/logic/website_navigator.dart';
+import 'package:flutter_web_test/logic/websitenavigator.dart';
 import 'package:flutter_web_test/model/brand.dart';
 import 'package:flutter_web_test/widget/brandicon.dart';
 

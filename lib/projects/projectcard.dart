@@ -8,6 +8,20 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> headerIcon = [];
+    if (project.iconResourcePath != null) {
+      headerIcon = [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(24),
+          child: Image.asset(
+            project.iconResourcePath!,
+            width: 48,
+            height: 48,
+          ),
+        ),
+        const SizedBox(width: 16)
+      ];
+    }
     return Card(
       child: Container(
         width: double.infinity,
@@ -15,14 +29,19 @@ class ProjectCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              project.name,
-              style: Theme.of(context).textTheme.bodyLarge,
+            Row(
+              children: [
+                ...headerIcon,
+                Text(
+                  project.name,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ],
             ),
             const SizedBox(height: 36),
             Text(
               "Screenshots:",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 24),
             ImageRow(
@@ -31,17 +50,17 @@ class ProjectCard extends StatelessWidget {
             const SizedBox(height: 24),
             Text(
               "Description: ${project.description}",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 24),
             Text(
               "Compatible Platforms: ${project.platforms.map((e) => e.name).join(", ")}",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 24),
             Text(
               "Tech-Stack: ${project.techStack.map((e) => e.name).join(", ")}",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 12),
           ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_test/model/project.dart';
 import 'package:flutter_web_test/widget/imagerow.dart';
+import 'package:flutter_web_test/widget/linkbutton.dart';
 
 class ProjectCard extends StatelessWidget {
   final Project project;
@@ -61,6 +62,18 @@ class ProjectCard extends StatelessWidget {
             Text(
               "Tech-Stack: ${project.techStack.map((e) => e.name).join(", ")}",
               style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 24),
+            Text(
+              "Sourcecode:",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 12,
+              children: project.sources
+                  .map((e) => LinkButton(repository: e))
+                  .toList(),
             ),
             const SizedBox(height: 12),
           ],

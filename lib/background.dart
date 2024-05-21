@@ -14,8 +14,8 @@ class PageBackgroundPainter extends CustomPainter {
     final paintOval = Paint()
       ..shader = RadialGradient(
         colors: [
-          colorScheme.surfaceVariant,
-          colorScheme.surfaceVariant.withAlpha(0),
+          colorScheme.surfaceContainerHighest,
+          colorScheme.surfaceContainerHighest.withAlpha(0),
         ],
         transform: EllipsisTransform(x: size.width / 2),
       ).createShader(Rect.fromCircle(

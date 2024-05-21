@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_test/widget/animation.dart';
+import 'package:flutter_web_test/widget/slidein.dart';
 
 Widget buildGeneralInformation({
   required Duration textAnimationDuration,
@@ -97,10 +98,12 @@ class _GeneralInformation extends StatelessWidget {
         Expanded(
           flex: 1,
           child: LayoutBuilder(builder: (context, constraints) {
-            return Container(
-              color: Colors.white,
-              height: constraints.maxWidth,
-              width: constraints.maxWidth,
+            return SlideInWidget(
+              child: Container(
+                color: Colors.white,
+                height: constraints.maxWidth,
+                width: constraints.maxWidth,
+              ),
             );
           }),
         )

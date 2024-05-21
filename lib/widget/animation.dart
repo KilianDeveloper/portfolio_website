@@ -35,15 +35,23 @@ class AnimatedText extends StatelessWidget {
               onEnd: onEnd,
               builder: (_, size, __) {
                 final end = size.toInt() == text.length ? "" : "_";
-                return Text(
-                  "$start${text.substring(0, size.toInt())}$end",
-                  style: style,
-                );
+                return Text.rich(TextSpan(children: [
+                  TextSpan(
+                    text: "$start${text.substring(0, size.toInt())}$end",
+                    style: style,
+                  ),
+                  TextSpan(
+                    text: "f" * (text.length - size.toInt()),
+                    style: style?.copyWith(color: Colors.transparent) ??
+                        const TextStyle(color: Colors.transparent),
+                  )
+                ]));
               });
         }
         return Text(
-          " ",
-          style: style,
+          "d" * text.length,
+          style: style?.copyWith(color: Colors.transparent) ??
+              const TextStyle(color: Colors.transparent),
         );
       },
     );

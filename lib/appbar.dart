@@ -14,6 +14,27 @@ class PortfolioAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _PortfolioAppBarState extends State<PortfolioAppBar> {
+  void onMoreSelected(BuildContext context, String value) {
+    switch (value) {
+      case "privacy":
+        context.go("/privacy");
+        break;
+      case "terms":
+        context.go("/terms");
+        break;
+      case "contact": //TODO contact click
+    }
+  }
+
+  bool isRouterMore(String route) {
+    switch (route) {
+      case "/privacy":
+      case "/terms":
+        return true;
+    }
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     final selectedTextStyle = Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -52,14 +73,34 @@ class _PortfolioAppBarState extends State<PortfolioAppBar> {
                 style: selectedRoute == "/projects" ? selectedTextStyle : null,
               ),
             ),
-            FilledButton(
-              onPressed: () {},
-              style: Theme.of(context).filledButtonTheme.style?.copyWith(
-                    backgroundColor: MaterialStatePropertyAll(
-                        Theme.of(context).colorScheme.primary),
+            PopupMenuButton(
+              tooltip: "Show more navigation options",
+              onSelected: (value) => onMoreSelected(context, value),
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                const PopupMenuItem(
+                  value: "privacy",
+                  child: ListTile(
+                    title: Text('Privacy'),
                   ),
-              child: const Text("Contact"),
-            )
+                ),
+                const PopupMenuItem(
+                  value: "terms",
+                  child: ListTile(
+                    title: Text('Terms of use'),
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: "contact",
+                  child: ListTile(
+                    title: Text('Contact me'),
+                  ),
+                ),
+              ],
+              child: Text(
+                "More",
+                style: isRouterMore(selectedRoute) ? selectedTextStyle : null,
+              ),
+            ),
           ],
         ),
       ),

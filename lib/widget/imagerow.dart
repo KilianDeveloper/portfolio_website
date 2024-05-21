@@ -22,7 +22,7 @@ class _ImageRowState extends State<ImageRow> {
         scrollbarOrientation: ScrollbarOrientation.bottom,
         controller: _controller,
         thumbColor: Theme.of(context).colorScheme.secondary,
-        trackColor: Theme.of(context).colorScheme.surfaceVariant,
+        trackColor: Theme.of(context).colorScheme.surfaceContainerHighest,
         trackVisibility: true,
         trackRadius: const Radius.circular(20),
         radius: const Radius.circular(20),

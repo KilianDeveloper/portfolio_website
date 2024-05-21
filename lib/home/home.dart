@@ -3,6 +3,7 @@ import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/home/header.dart';
 import 'package:flutter_web_test/home/techstackcard.dart';
 import 'package:flutter_web_test/theme.dart';
+import 'package:flutter_web_test/widget/slidein.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     HomeHeader(),
                     Align(
                       alignment: Alignment.bottomCenter,
-                      child: TechStackCard(),
+                      child: SlideInWidget(child: TechStackCard()),
                     )
                   ],
                 ),

@@ -38,8 +38,7 @@ class BrandCollectionCard extends StatelessWidget {
                     ?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 32),
-              Row(
-                mainAxisSize: MainAxisSize.min,
+              Wrap(
                 children: brands,
               )
             ],

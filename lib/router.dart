@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_test/about/about.dart';
 import 'package:flutter_web_test/background.dart';
 import 'package:flutter_web_test/home/home.dart';
+import 'package:flutter_web_test/privacy/privacy.dart';
 import 'package:flutter_web_test/projects/projects.dart';
+import 'package:flutter_web_test/terms/terms.dart';
 import 'package:go_router/go_router.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -73,6 +75,24 @@ final GoRouter appRouter = GoRouter(
             context: context,
             state: state,
             child: const ProjectsScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/privacy',
+          parentNavigatorKey: _shellNavigatorKey,
+          pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+            context: context,
+            state: state,
+            child: const PrivacyScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/terms',
+          parentNavigatorKey: _shellNavigatorKey,
+          pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
+            context: context,
+            state: state,
+            child: const TermsOfUsageScreen(),
           ),
         ),
       ],

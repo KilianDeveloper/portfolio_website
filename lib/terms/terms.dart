@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/data.dart';
-import 'package:flutter_web_test/projects/projectcard.dart';
 import 'package:flutter_web_test/theme.dart';
 import 'package:flutter_web_test/widget/animation.dart';
-import 'package:flutter_web_test/widget/slidein.dart';
 
-class ProjectsScreen extends StatefulWidget {
-  const ProjectsScreen({super.key});
+class TermsOfUsageScreen extends StatefulWidget {
+  const TermsOfUsageScreen({super.key});
 
   @override
-  State<ProjectsScreen> createState() => _ProjectsScreenState();
+  State<TermsOfUsageScreen> createState() => _TermsOfUsageScreenState();
 }
 
-class _ProjectsScreenState extends State<ProjectsScreen> {
+class _TermsOfUsageScreenState extends State<TermsOfUsageScreen> {
   @override
   Widget build(BuildContext context) {
-    const projects = myProjects;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -28,14 +25,13 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AnimatedText(
-                    "My Projects",
+                    "Terms of use",
                     start: ">> ",
                     style: Theme.of(context).textTheme.titleLarge,
                     duration: const Duration(milliseconds: 500),
                   ),
                   const SizedBox(height: 80),
-                  ...projects.map(
-                      (project) => SlideInWidget(child: ProjectCard(project)))
+                  const Text(termsOfUsageText),
                 ],
               ),
             ),

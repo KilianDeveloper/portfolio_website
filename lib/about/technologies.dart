@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_test/about/brandcollectioncard.dart';
 import 'package:flutter_web_test/model/brandcollection.dart';
 import 'package:flutter_web_test/widget/animation.dart';
+import 'package:flutter_web_test/widget/slidein.dart';
 
 List<Widget> buildTechnologies({
   required List<BrandCollection> brandCollections,
@@ -26,9 +27,11 @@ List<Widget> buildTechnologies({
         spacing: 24,
         runSpacing: 24,
         children: brandCollections
-            .map((e) => BrandCollectionCard(
-                collection: e,
-                width: math.max(0, (constraints.maxWidth / 2 - 12))))
+            .map((e) => SlideInWidget(
+                  child: BrandCollectionCard(
+                      collection: e,
+                      width: math.max(0, (constraints.maxWidth / 2 - 12))),
+                ))
             .toList(),
       );
     })

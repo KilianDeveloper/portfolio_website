@@ -14,7 +14,7 @@ List<Widget> buildFindMe(
       start: ">> ",
       style: Theme.of(context).textTheme.bodyLarge,
       duration: textAnimationDuration,
-      delayMilliseconds: 9 * textAnimationMilliseconds,
+      delayMilliseconds: 10 * textAnimationMilliseconds,
     ),
     const SizedBox(height: 24),
     Wrap(

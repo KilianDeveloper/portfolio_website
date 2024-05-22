@@ -18,7 +18,7 @@ List<Widget> buildTechnologies({
       start: ">> ",
       style: Theme.of(context).textTheme.bodyLarge,
       duration: textAnimationDuration,
-      delayMilliseconds: 8 * textAnimationMilliseconds,
+      delayMilliseconds: 9 * textAnimationMilliseconds,
     ),
     const SizedBox(height: 24),
     LayoutBuilder(builder: (context, constraints) {

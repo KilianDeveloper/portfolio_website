@@ -54,11 +54,19 @@ class _GeneralInformation extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               AnimatedText(
-                "Location: Dresden, Germany",
+                "Student",
                 start: ">> ",
                 style: Theme.of(context).textTheme.bodyMedium,
                 duration: textAnimationDuration,
                 delayMilliseconds: 3 * textAnimationMilliseconds,
+              ),
+              const SizedBox(height: 8),
+              AnimatedText(
+                "Location: Dresden, Germany",
+                start: ">> ",
+                style: Theme.of(context).textTheme.bodyMedium,
+                duration: textAnimationDuration,
+                delayMilliseconds: 4 * textAnimationMilliseconds,
               ),
               const SizedBox(height: 48),
               AnimatedText(
@@ -66,7 +74,7 @@ class _GeneralInformation extends StatelessWidget {
                 start: ">> ",
                 style: Theme.of(context).textTheme.bodyLarge,
                 duration: textAnimationDuration,
-                delayMilliseconds: 4 * textAnimationMilliseconds,
+                delayMilliseconds: 5 * textAnimationMilliseconds,
               ),
               const SizedBox(height: 24),
               AnimatedText(
@@ -74,7 +82,7 @@ class _GeneralInformation extends StatelessWidget {
                 start: ">> ",
                 style: Theme.of(context).textTheme.bodyMedium,
                 duration: textAnimationDuration,
-                delayMilliseconds: 5 * textAnimationMilliseconds,
+                delayMilliseconds: 6 * textAnimationMilliseconds,
               ),
               const SizedBox(height: 8),
               AnimatedText(
@@ -82,7 +90,7 @@ class _GeneralInformation extends StatelessWidget {
                 start: ">> ",
                 style: Theme.of(context).textTheme.bodyMedium,
                 duration: textAnimationDuration,
-                delayMilliseconds: 6 * textAnimationMilliseconds,
+                delayMilliseconds: 7 * textAnimationMilliseconds,
               ),
               const SizedBox(height: 8),
               AnimatedText(
@@ -90,7 +98,7 @@ class _GeneralInformation extends StatelessWidget {
                 start: ">> ",
                 style: Theme.of(context).textTheme.bodyMedium,
                 duration: textAnimationDuration,
-                delayMilliseconds: 7 * textAnimationMilliseconds,
+                delayMilliseconds: 8 * textAnimationMilliseconds,
               ),
             ],
           ),

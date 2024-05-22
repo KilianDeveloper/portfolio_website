@@ -22,7 +22,8 @@ class _PortfolioAppBarState extends State<PortfolioAppBar> {
       case "terms":
         context.go("/terms");
         break;
-      case "contact": //TODO contact click
+      case "contact":
+        context.go("/about", extra: true);
     }
   }
 

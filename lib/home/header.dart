@@ -20,6 +20,7 @@ class HomeHeader extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AnimatedText(
               "",
@@ -28,11 +29,13 @@ class HomeHeader extends StatelessWidget {
               duration: const Duration(milliseconds: 1),
               delayMilliseconds: 1000,
             ),
-            AnimatedText(
-              "I’m a passionate Software Developer based in Germany",
-              style: Theme.of(context).textTheme.bodyLarge,
-              duration: const Duration(milliseconds: 1500),
-              delayMilliseconds: 1500,
+            Flexible(
+              child: AnimatedText(
+                "I’m a passionate Software Developer based in Germany",
+                style: Theme.of(context).textTheme.bodyLarge,
+                duration: const Duration(milliseconds: 1500),
+                delayMilliseconds: 1500,
+              ),
             ),
           ],
         ),
@@ -45,7 +48,7 @@ class HomeHeader extends StatelessWidget {
             ),
             const SizedBox(width: 20),
             FilledButton(
-              onPressed: () {}, //TODO contact click
+              onPressed: () => context.go("/about", extra: true),
               style: Theme.of(context).filledButtonTheme.style?.copyWith(
                     backgroundColor: WidgetStatePropertyAll(
                         Theme.of(context).colorScheme.primary),

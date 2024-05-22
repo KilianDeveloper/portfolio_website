@@ -41,7 +41,7 @@ class AnimatedText extends StatelessWidget {
                     style: style,
                   ),
                   TextSpan(
-                    text: "f" * (text.length - size.toInt()),
+                    text: "f " * ((text.length - size.toInt()) ~/ 2),
                     style: style?.copyWith(color: Colors.transparent) ??
                         const TextStyle(color: Colors.transparent),
                   )

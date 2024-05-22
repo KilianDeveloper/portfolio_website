@@ -65,6 +65,8 @@ const List<Project> myProjects = [
       ])
 ];
 
+const emailAddress = "sup.kilian.dev@gmail.com";
+
 const privacyText = """
 Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber Kilian-Dev informieren.
 

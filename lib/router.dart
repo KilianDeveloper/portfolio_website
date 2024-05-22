@@ -62,11 +62,14 @@ final GoRouter appRouter = GoRouter(
         GoRoute(
           path: '/about',
           parentNavigatorKey: _shellNavigatorKey,
-          pageBuilder: (context, state) => buildPageWithDefaultTransition<void>(
-            context: context,
-            state: state,
-            child: const AboutScreen(),
-          ),
+          pageBuilder: (context, state) {
+            final query = state.extra;
+            return buildPageWithDefaultTransition<void>(
+              context: context,
+              state: state,
+              child: AboutScreen(scrollDown: query == true),
+            );
+          },
         ),
         GoRoute(
           path: '/projects',

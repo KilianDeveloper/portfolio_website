@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_test/theme.dart';
+import 'package:flutter_web_test/theme/theme.dart';
 import 'package:go_router/go_router.dart';
 
 class PortfolioAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -38,13 +38,13 @@ class _PortfolioAppBarState extends State<PortfolioAppBar> {
 
   @override
   Widget build(BuildContext context) {
+    final leftPadding = loadPaddingLeft(context);
     final selectedTextStyle = Theme.of(context).textTheme.labelLarge?.copyWith(
           color: Theme.of(context).colorScheme.onPrimary,
         );
     final selectedRoute = GoRouterState.of(context).uri.toString();
     return Padding(
-      padding:
-          const EdgeInsets.symmetric(horizontal: paddingLeft).copyWith(top: 40),
+      padding: EdgeInsets.symmetric(horizontal: leftPadding).copyWith(top: 40),
       child: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

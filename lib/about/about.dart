@@ -5,7 +5,7 @@ import 'package:flutter_web_test/about/general.dart';
 import 'package:flutter_web_test/about/technologies.dart';
 import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/data.dart';
-import 'package:flutter_web_test/theme.dart';
+import 'package:flutter_web_test/theme/theme.dart';
 
 class AboutScreen extends StatefulWidget {
   final bool scrollDown;
@@ -43,6 +43,7 @@ class _AboutScreenState extends State<AboutScreen> {
     const findMeBrands = myFindMeBrands;
     const textAnimationDuration = Duration(milliseconds: 200);
     final textAnimationMilliseconds = textAnimationDuration.inMilliseconds;
+    final appPadding = loadPadding(context);
     return SingleChildScrollView(
       controller: _controller,
       child: Column(

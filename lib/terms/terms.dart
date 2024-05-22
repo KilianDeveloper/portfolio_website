@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/data.dart';
-import 'package:flutter_web_test/theme.dart';
+import 'package:flutter_web_test/theme/theme.dart';
 import 'package:flutter_web_test/widget/animation.dart';
 
 class TermsOfUsageScreen extends StatefulWidget {
@@ -14,6 +14,7 @@ class TermsOfUsageScreen extends StatefulWidget {
 class _TermsOfUsageScreenState extends State<TermsOfUsageScreen> {
   @override
   Widget build(BuildContext context) {
+    final appPadding = loadPadding(context);
     return SingleChildScrollView(
       child: Column(
         children: [

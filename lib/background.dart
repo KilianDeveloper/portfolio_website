@@ -1,7 +1,7 @@
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_web_test/theme.dart';
+import 'package:flutter_web_test/theme/color.dart';
 
 class PageBackgroundPainter extends CustomPainter {
   @override

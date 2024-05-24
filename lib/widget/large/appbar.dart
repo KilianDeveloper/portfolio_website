@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_test/theme/theme.dart';
 import 'package:go_router/go_router.dart';
 
-class PortfolioAppBar extends StatefulWidget implements PreferredSizeWidget {
+class LargePortfolioAppBar extends StatefulWidget
+    implements PreferredSizeWidget {
   final StatefulNavigationShell? shell;
-  const PortfolioAppBar({super.key, this.shell});
+  const LargePortfolioAppBar({super.key, this.shell});
 
   @override
-  State<PortfolioAppBar> createState() => _PortfolioAppBarState();
+  State<LargePortfolioAppBar> createState() => _LargePortfolioAppBarState();
 
   @override
   Size get preferredSize => const Size(double.infinity, 100);
 }
 
-class _PortfolioAppBarState extends State<PortfolioAppBar> {
+class _LargePortfolioAppBarState extends State<LargePortfolioAppBar> {
   void onMoreSelected(BuildContext context, String value) {
     switch (value) {
       case "privacy":

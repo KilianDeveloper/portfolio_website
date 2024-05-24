@@ -34,22 +34,22 @@ class _TechStackCardState extends State<TechStackCard>
                 BrandIcon(
                   brand: Brand.flutter,
                   showName: false,
-                  size: 48,
+                  size: 44,
                 ),
                 BrandIcon(
                   brand: Brand.spring,
                   showName: false,
-                  size: 48,
+                  size: 44,
                 ),
                 BrandIcon(
                   brand: Brand.docker,
                   showName: false,
-                  size: 48,
+                  size: 44,
                 ),
                 BrandIcon(
                   brand: Brand.figma,
                   showName: false,
-                  size: 48,
+                  size: 44,
                 ),
               ],
             ),

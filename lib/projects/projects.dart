@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/data.dart';
 import 'package:flutter_web_test/projects/projectcard.dart';
 import 'package:flutter_web_test/theme/theme.dart';
 import 'package:flutter_web_test/widget/animation.dart';
+import 'package:flutter_web_test/widget/large/appbar.dart';
 import 'package:flutter_web_test/widget/slidein.dart';
 
 class ProjectsScreen extends StatefulWidget {
@@ -21,7 +21,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const PortfolioAppBar(),
+          const LargePortfolioAppBar(),
           Padding(
             padding: appPadding,
             child: SelectionArea(

@@ -51,14 +51,14 @@ class HomeHeader extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 48),
+        const SizedBox(height: 16),
         Row(
           children: [
             FilledButton(
               onPressed: () => context.go("/about"),
               child: const Text("Learn More"),
             ),
-            const SizedBox(width: 20),
+            const SizedBox(width: 12),
             SizedBox(
               width: 56,
               child: FilledButton(

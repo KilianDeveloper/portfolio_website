@@ -3,9 +3,9 @@ import 'package:flutter_web_test/about/contact.dart';
 import 'package:flutter_web_test/about/findme.dart';
 import 'package:flutter_web_test/about/general.dart';
 import 'package:flutter_web_test/about/technologies.dart';
-import 'package:flutter_web_test/appbar.dart';
 import 'package:flutter_web_test/data.dart';
 import 'package:flutter_web_test/theme/theme.dart';
+import 'package:flutter_web_test/widget/large/appbar.dart';
 
 class AboutScreen extends StatefulWidget {
   final bool scrollDown;
@@ -48,7 +48,7 @@ class _AboutScreenState extends State<AboutScreen> {
       controller: _controller,
       child: Column(
         children: [
-          const PortfolioAppBar(),
+          const LargePortfolioAppBar(),
           Padding(
             padding: appPadding,
             child: SelectionArea(

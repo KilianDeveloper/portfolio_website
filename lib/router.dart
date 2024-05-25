@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_test/about/about.dart';
-import 'package:flutter_web_test/background.dart';
 import 'package:flutter_web_test/home/home.dart';
 import 'package:flutter_web_test/privacy/privacy.dart';
 import 'package:flutter_web_test/projects/projects.dart';
 import 'package:flutter_web_test/terms/terms.dart';
+import 'package:flutter_web_test/widget/background.dart';
 import 'package:go_router/go_router.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -32,19 +32,7 @@ final GoRouter appRouter = GoRouter(
         return Stack(
           children: [
             Scaffold(
-              extendBodyBehindAppBar: true,
-              body: Stack(
-                children: [
-                  SizedBox(
-                    width: double.infinity,
-                    height: double.infinity,
-                    child: CustomPaint(
-                      painter: PageBackgroundPainter(),
-                    ),
-                  ),
-                  child,
-                ],
-              ),
+              body: PageBackground(child: child),
             ),
           ],
         );

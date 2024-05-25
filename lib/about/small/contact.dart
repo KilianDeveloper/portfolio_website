@@ -4,7 +4,7 @@ import 'package:flutter_web_test/logic/websitenavigator.dart';
 import 'package:flutter_web_test/model/brand.dart';
 import 'package:flutter_web_test/widget/animation.dart';
 
-List<Widget> buildContact(
+List<Widget> buildSmallContact(
     {required BuildContext context,
     required Duration textAnimationDuration,
     required int textAnimationMilliseconds}) {
@@ -17,7 +17,7 @@ List<Widget> buildContact(
       delayMilliseconds: 11 * textAnimationMilliseconds,
     ),
     const SizedBox(height: 24),
-    Row(
+    Wrap(
       children: [
         AnimatedText(
           "Email: ",
@@ -43,7 +43,7 @@ List<Widget> buildContact(
       ],
     ),
     const SizedBox(height: 8),
-    Row(
+    Wrap(
       children: [
         AnimatedText(
           "Linked-In: ",

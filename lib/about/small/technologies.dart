@@ -6,7 +6,7 @@ import 'package:flutter_web_test/model/brandcollection.dart';
 import 'package:flutter_web_test/widget/animation.dart';
 import 'package:flutter_web_test/widget/slidein.dart';
 
-List<Widget> buildTechnologies({
+List<Widget> buildSmallTechnologies({
   required List<BrandCollection> brandCollections,
   required Duration textAnimationDuration,
   required int textAnimationMilliseconds,
@@ -24,13 +24,14 @@ List<Widget> buildTechnologies({
     LayoutBuilder(builder: (context, constraints) {
       return Wrap(
         alignment: WrapAlignment.spaceEvenly,
-        spacing: 24,
-        runSpacing: 24,
+        runSpacing: 0,
         children: brandCollections
             .map((e) => SlideInWidget(
                   child: BrandCollectionCard(
-                      collection: e,
-                      width: math.max(0, (constraints.maxWidth / 2 - 12))),
+                    collection: e,
+                    width: math.max(0, constraints.maxWidth),
+                    iconSize: 68,
+                  ),
                 ))
             .toList(),
       );

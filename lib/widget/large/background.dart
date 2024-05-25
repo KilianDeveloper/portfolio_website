@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_web_test/theme/color.dart';
 
-class PageBackgroundPainter extends CustomPainter {
+class LargePageBackgroundPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final offsetCircle1 = Offset(-size.height / 2 * .1, size.height / 2);
@@ -70,7 +70,7 @@ class PageBackgroundPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(PageBackgroundPainter oldDelegate) => false;
+  bool shouldRepaint(LargePageBackgroundPainter oldDelegate) => false;
 }
 
 class EllipsisTransform extends GradientTransform {

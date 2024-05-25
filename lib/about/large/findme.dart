@@ -3,7 +3,7 @@ import 'package:flutter_web_test/about/clickablebrandcard.dart';
 import 'package:flutter_web_test/model/brand.dart';
 import 'package:flutter_web_test/widget/animation.dart';
 
-List<Widget> buildFindMe(
+List<Widget> buildLargeFindMe(
     {required BuildContext context,
     required Duration textAnimationDuration,
     required int textAnimationMilliseconds,

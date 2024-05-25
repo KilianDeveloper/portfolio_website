@@ -5,15 +5,21 @@ import 'package:flutter_web_test/widget/brandicon.dart';
 
 class ClickableBrandCard extends StatelessWidget {
   final Brand brand;
+  final double iconSize;
+  final EdgeInsets? padding;
+  final double width;
   const ClickableBrandCard({
     super.key,
     required this.brand,
+    this.iconSize = 80,
+    this.padding,
+    this.width = 240,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 240,
+      width: width,
       child: GestureDetector(
         onTapUp: (_) {
           WebsiteNavigator.getWebsiteNavigatorFactory()
@@ -21,10 +27,10 @@ class ClickableBrandCard extends StatelessWidget {
         },
         child: Card(
           child: Padding(
-            padding: const EdgeInsets.all(40.0),
+            padding: padding ?? const EdgeInsets.all(40),
             child: BrandIcon(
               brand: brand,
-              size: 80.0,
+              size: iconSize,
               textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.bold,

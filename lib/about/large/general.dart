@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_test/widget/animation.dart';
 import 'package:flutter_web_test/widget/slidein.dart';
 
-Widget buildGeneralInformation({
+Widget buildLargeGeneralInformation({
   required Duration textAnimationDuration,
   required int textAnimationMilliseconds,
 }) =>

@@ -15,7 +15,7 @@ EdgeInsets loadPadding(BuildContext context) {
   if (ResponsiveWidget.isSmallScreen(context)) {
     return buildSmallPadding();
   } else {
-    return buildSmallPadding();
+    return buildLargePadding();
   }
 }
 

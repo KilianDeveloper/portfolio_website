@@ -5,10 +5,12 @@ import 'package:flutter_web_test/widget/brandicon.dart';
 class BrandCollectionCard extends StatelessWidget {
   final BrandCollection collection;
   final double width;
+  final double iconSize;
   const BrandCollectionCard({
     super.key,
     required this.collection,
     required this.width,
+    this.iconSize = 80,
   });
 
   @override
@@ -17,10 +19,10 @@ class BrandCollectionCard extends StatelessWidget {
         .map(
           (brand) => BrandIcon(
             brand: brand,
-            size: 80.0,
+            size: iconSize,
           ),
         )
-        .expand((element) => [element, const SizedBox(width: 80)])
+        .expand((element) => [element, SizedBox(width: iconSize)])
         .toList();
     brands.removeLast();
     return SizedBox(
@@ -39,6 +41,7 @@ class BrandCollectionCard extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               Wrap(
+                runSpacing: 24,
                 children: brands,
               )
             ],

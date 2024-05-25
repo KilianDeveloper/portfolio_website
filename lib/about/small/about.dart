@@ -21,7 +21,8 @@ class SmallAbout extends StatelessWidget {
     final textAnimationMilliseconds = textAnimationDuration.inMilliseconds;
 
     return SmallPortfolioAppBar(
-      controller: controller,
+      scrollController: controller,
+      isScrollable: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

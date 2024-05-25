@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_test/data.dart';
-import 'package:flutter_web_test/projects/projectcard.dart';
-import 'package:flutter_web_test/widget/animation.dart';
-import 'package:flutter_web_test/widget/large/appbar.dart';
-import 'package:flutter_web_test/widget/slidein.dart';
+import 'package:flutter_web_test/projects/large/projects.dart';
+import 'package:flutter_web_test/projects/small/projects.dart';
+import 'package:flutter_web_test/widget/responsivewidget.dart';
 
 class ProjectsScreen extends StatefulWidget {
   const ProjectsScreen({super.key});
@@ -15,24 +13,9 @@ class ProjectsScreen extends StatefulWidget {
 class _ProjectsScreenState extends State<ProjectsScreen> {
   @override
   Widget build(BuildContext context) {
-    const projects = myProjects;
-    return SingleChildScrollView(
-      child: LargePortfolioAppBar(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AnimatedText(
-              "My Projects",
-              start: ">> ",
-              style: Theme.of(context).textTheme.titleLarge,
-              duration: const Duration(milliseconds: 500),
-            ),
-            const SizedBox(height: 80),
-            ...projects
-                .map((project) => SlideInWidget(child: ProjectCard(project)))
-          ],
-        ),
-      ),
+    return const ResponsiveWidget(
+      largeScreen: LargeProjects(),
+      smallScreen: SmallProjects(),
     );
   }
 }

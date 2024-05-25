@@ -10,13 +10,15 @@ class SmallPortfolioAppBar extends StatefulWidget
   final StatefulNavigationShell? shell;
   final bool fillSpace;
   final Widget child;
-  final ScrollController? controller;
+  final bool isScrollable;
+  final ScrollController? scrollController;
   const SmallPortfolioAppBar({
     super.key,
     this.shell,
     required this.child,
     this.fillSpace = false,
-    this.controller,
+    this.isScrollable = false,
+    this.scrollController,
   });
 
   @override
@@ -169,7 +171,8 @@ class _SmallPortfolioAppBarState extends State<SmallPortfolioAppBar> {
                           Align(
                             alignment: Alignment.bottomLeft,
                             child: FilledButton(
-                              onPressed: () {},
+                              onPressed: () =>
+                                  context.go("/about", extra: true),
                               child: const Text("Contact"),
                             ),
                           )
@@ -212,12 +215,12 @@ class _SmallPortfolioAppBarState extends State<SmallPortfolioAppBar> {
         _buildMainContent(),
       ],
     );
-    if (widget.controller == null) {
-      return content;
+    if (widget.isScrollable) {
+      return SingleChildScrollView(
+        controller: widget.scrollController,
+        child: content,
+      );
     }
-    return SingleChildScrollView(
-      controller: widget.controller,
-      child: content,
-    );
+    return content;
   }
 }

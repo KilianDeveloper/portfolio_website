@@ -1,33 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_test/data.dart';
-import 'package:flutter_web_test/widget/animation.dart';
-import 'package:flutter_web_test/widget/large/appbar.dart';
+import 'package:flutter_web_test/terms/large/terms.dart';
+import 'package:flutter_web_test/terms/small/terms.dart';
+import 'package:flutter_web_test/widget/responsivewidget.dart';
 
-class TermsOfUsageScreen extends StatefulWidget {
+class TermsOfUsageScreen extends StatelessWidget {
   const TermsOfUsageScreen({super.key});
 
   @override
-  State<TermsOfUsageScreen> createState() => _TermsOfUsageScreenState();
-}
-
-class _TermsOfUsageScreenState extends State<TermsOfUsageScreen> {
-  @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: LargePortfolioAppBar(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AnimatedText(
-            "Terms of use",
-            start: ">> ",
-            style: Theme.of(context).textTheme.titleLarge,
-            duration: const Duration(milliseconds: 500),
-          ),
-          const SizedBox(height: 80),
-          const Text(termsOfUsageText),
-        ],
-      ),
-    ));
+    return const ResponsiveWidget(
+      largeScreen: LargeTerms(),
+      smallScreen: SmallTerms(),
+    );
   }
 }

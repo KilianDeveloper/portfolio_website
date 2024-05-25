@@ -19,38 +19,37 @@ class LargeAbout extends StatelessWidget {
     const findMeBrands = myFindMeBrands;
     const textAnimationDuration = Duration(milliseconds: 200);
     final textAnimationMilliseconds = textAnimationDuration.inMilliseconds;
-    return SingleChildScrollView(
-      controller: controller,
-      child: LargePortfolioAppBar(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            buildLargeGeneralInformation(
-              textAnimationDuration: textAnimationDuration,
-              textAnimationMilliseconds: textAnimationMilliseconds,
-            ),
-            const SizedBox(height: 48),
-            ...buildLargeTechnologies(
-              brandCollections: brandCollections,
-              textAnimationDuration: textAnimationDuration,
-              textAnimationMilliseconds: textAnimationMilliseconds,
-              context: context,
-            ),
-            const SizedBox(height: 48),
-            ...buildLargeFindMe(
-              context: context,
-              textAnimationDuration: textAnimationDuration,
-              textAnimationMilliseconds: textAnimationMilliseconds,
-              brands: findMeBrands,
-            ),
-            const SizedBox(height: 48),
-            ...buildLargeContact(
-              context: context,
-              textAnimationDuration: textAnimationDuration,
-              textAnimationMilliseconds: textAnimationMilliseconds,
-            )
-          ],
-        ),
+    return LargePortfolioAppBar(
+      isScrollable: true,
+      scrollController: controller,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          buildLargeGeneralInformation(
+            textAnimationDuration: textAnimationDuration,
+            textAnimationMilliseconds: textAnimationMilliseconds,
+          ),
+          const SizedBox(height: 48),
+          ...buildLargeTechnologies(
+            brandCollections: brandCollections,
+            textAnimationDuration: textAnimationDuration,
+            textAnimationMilliseconds: textAnimationMilliseconds,
+            context: context,
+          ),
+          const SizedBox(height: 48),
+          ...buildLargeFindMe(
+            context: context,
+            textAnimationDuration: textAnimationDuration,
+            textAnimationMilliseconds: textAnimationMilliseconds,
+            brands: findMeBrands,
+          ),
+          const SizedBox(height: 48),
+          ...buildLargeContact(
+            context: context,
+            textAnimationDuration: textAnimationDuration,
+            textAnimationMilliseconds: textAnimationMilliseconds,
+          )
+        ],
       ),
     );
   }

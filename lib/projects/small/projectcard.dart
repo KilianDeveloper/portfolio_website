@@ -3,26 +3,12 @@ import 'package:flutter_web_test/model/project.dart';
 import 'package:flutter_web_test/widget/imagerow.dart';
 import 'package:flutter_web_test/widget/linkbutton.dart';
 
-class ProjectCard extends StatelessWidget {
+class SmallProjectCard extends StatelessWidget {
   final Project project;
-  const ProjectCard(this.project, {super.key});
+  const SmallProjectCard(this.project, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> headerIcon = [];
-    if (project.iconResourcePath != null) {
-      headerIcon = [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(24),
-          child: Image.asset(
-            project.iconResourcePath!,
-            width: 48,
-            height: 48,
-          ),
-        ),
-        const SizedBox(width: 16)
-      ];
-    }
     return Card(
       child: Container(
         width: double.infinity,
@@ -31,21 +17,26 @@ class ProjectCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ...headerIcon,
-                Text(
-                  project.name,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                Flexible(
+                  child: Text(
+                    project.name,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
                 ),
               ],
             ),
-            const SizedBox(height: 36),
+            const SizedBox(height: 24),
             Text(
               "Screenshots:",
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 24),
             ImageRow(
+              height: 300,
+              cornerRadius: 12,
+              space: 8,
               images: project.imageResourcePaths,
             ),
             const SizedBox(height: 24),
@@ -71,6 +62,7 @@ class ProjectCard extends StatelessWidget {
             const SizedBox(height: 12),
             Wrap(
               spacing: 12,
+              runSpacing: 12,
               children: project.sources
                   .map((e) => LinkButton(repository: e))
                   .toList(),

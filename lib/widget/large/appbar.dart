@@ -7,12 +7,16 @@ class LargePortfolioAppBar extends StatefulWidget
     implements PreferredSizeWidget {
   final StatefulNavigationShell? shell;
   final Widget child;
+  final ScrollController? scrollController;
+  final bool isScrollable;
   final bool fillSpace;
   const LargePortfolioAppBar({
     super.key,
     this.shell,
     required this.child,
     this.fillSpace = false,
+    this.scrollController,
+    this.isScrollable = false,
   });
 
   @override
@@ -72,7 +76,7 @@ class _LargePortfolioAppBarState extends State<LargePortfolioAppBar> {
           color: Theme.of(context).colorScheme.onPrimary,
         );
     final selectedRoute = GoRouterState.of(context).uri.toString();
-    return Column(
+    final content = Column(
       children: [
         Padding(
           padding:
@@ -144,5 +148,12 @@ class _LargePortfolioAppBarState extends State<LargePortfolioAppBar> {
         _buildMainContent(),
       ],
     );
+    if (widget.isScrollable) {
+      return SingleChildScrollView(
+        controller: widget.scrollController,
+        child: content,
+      );
+    }
+    return content;
   }
 }
